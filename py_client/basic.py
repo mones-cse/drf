@@ -4,11 +4,13 @@ print('Hello World!')
 
 endpoint = "https://httpbin.org/anything"
 endpoint = "http://httpbin.org/status/200"
-endpoint = "http://localhost:8000"
+endpoint = "http://localhost:8000/api"
 
 get_response = requests.get(endpoint, json={"key": "value"})
-print(get_response.text)
 print(get_response.status_code)
+
+# print(get_response.text)
+print(get_response.json())
 # {...'data': '{"key": "value"}' ...}
 
 # get_response = requests.get(endpoint, data={"key": "value"})
