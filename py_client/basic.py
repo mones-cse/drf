@@ -8,14 +8,17 @@ endpoint = "http://localhost:8000/api"
 
 get_response = requests.get(endpoint, json={"key": "value"})
 print(get_response.status_code)
-
-# print(get_response.text)
 print(get_response.json())
+
+
+# * If we send json parameter to the endpoint, we get data in the json key of the response.
+# get_response = requests.get(endpoint, json={"key": "value"})
+# print(get_response.json())
 # {...'data': '{"key": "value"}' ...}
 
+# * If we send data parameter to the endpoint, we get data in the form key of the response.
 # get_response = requests.get(endpoint, data={"key": "value"})
 # print(get_response.json())
 # {...'form': '{"key": "value"}' ...}
 
-
-# https://youtu.be/c708Nf0cHrs?t=1648
+# * get_response.text shows us the raw response.
